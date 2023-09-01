@@ -43,3 +43,7 @@ command-settings:
     enabled: true
   - name: autopay
     enabled: true
+
+enable-access-control:
+  label: false
+  organization: false
