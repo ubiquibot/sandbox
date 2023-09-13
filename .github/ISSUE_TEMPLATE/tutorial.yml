@@ -9,7 +9,7 @@ body:
         ## Help Menu
 
         Here is a list of the available commands. These can be used in any comment body after an issue has been created. You can try them out by creating this issue, then later adding a comment with these commands.
-
+        ```
         - /start: Assign the origin sender to the issue automatically.
         - /stop: Unassign the origin sender from the issue automatically.
         - /help: List all available commands.
@@ -21,7 +21,7 @@ body:
         - /wallet: <WALLET_ADDRESS | ENS_NAME>: Register the hunter's wallet address. 
           ex1: /wallet 0x0000000000000000000000000000000000000000
           ex2: /wallet vitalik.eth
-
+        ```
   - type: textarea
     attributes:
       label: Describe the problem here. 
@@ -39,7 +39,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Add Labels
+        ## Pricing the Task
 
-        - It's a good idea to set a `Time: ` and `Priority: ` label as well so that you can see the bot assist you with pricing the issue. 
-        - You can pick one `Time` label, and one `Priority` label. The bot will automatically calculate based on a simple lookup table.
+        - This issue template allows you to set labels as if you were a repository maintainer. 
+        - With the example `Time` and `Priority` label you can see the bot assist you with pricing the issue once it is posted. 
+        - The bot automatically calculates the price based on a configurable lookup table.
