@@ -41,6 +41,6 @@ body:
       value: |
         ## Pricing the Task
 
-        - This issue template allows you to set labels as if you were a repository maintainer. 
+        - This issue template is preconfigured to set the `Priority: 3 (High)` and `Time: <1 Hour` labels as if you were a repository maintainer. 
         - With the example `Time` and `Priority` label you can see the bot assist you with pricing the issue once it is posted. 
         - The bot automatically calculates the price based on a configurable lookup table.
