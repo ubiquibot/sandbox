@@ -29,7 +29,7 @@ plugins:
     - plugin: ubiquibot/conversation-rewards@main
       with:
         evmNetworkId: 100
-        evmPrivateEncrypted: "V1-3jNFk_Xebd762bnaraEeq5n7GvLKgv3KyogINNXpTWtZC0sn2Ar30mElrIcoWs6VP5iTK_HC3fmWIES6DRqvGkPypVPo7srF7u17WnYK5nWmZ6la-HstPugKfMTW6imV30gaHvHcTYsyQ558taw"
+        evmPrivateEncrypted: "kmpTKq5Wh9r9x5j3U9GqZr3NYnjK2g0HtbzeUBOuLC2y3x8ja_SKBNlB2AZ6LigXHP_HeMitftVUtzmoj8CFfVP9SqjWoL6IPku1hVTWkdTn97g1IxzmjydFxjdcf0wuDW1hvVtoq3Uw5yALABqxcQ"
         incentives:
           enabled: true
           contentEvaluator:
