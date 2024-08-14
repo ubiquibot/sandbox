@@ -119,7 +119,7 @@ plugins:
         mergeTimeout:
           collaborator: "3.5 days"
   - uses:
-    - plugin: ubiquibot/test-automated-merging@main
+    - plugin: ubiquibot/automated-merging@main
       with:
         approvalsRequired:
           collaborator: 1
