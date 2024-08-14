@@ -1,0 +1,137 @@
+plugins:
+  - uses:
+    - plugin: https://ubiquibot-command-wallet.ubiquity.workers.dev
+  - uses:
+    - plugin: https://ubiquibot-command-query-user.ubiquity.workers.dev
+      with:
+        allowPublicQuery: true
+  - uses:
+    - plugin: https://ubiquibot-assistive-pricing.ubiquity.workers.dev
+      with:
+        labels:
+          time:
+            - "Time: <1 Hour"
+            - "Time: <2 Hours"
+            - "Time: <4 Hours"
+            - "Time: <1 Day"
+            - "Time: <1 Week"
+          priority:
+            - "Priority: 1 (Normal)"
+            - "Priority: 2 (Medium)"
+            - "Priority: 3 (High)"
+            - "Priority: 4 (Urgent)"
+            - "Priority: 5 (Emergency)"
+        basePriceMultiplier: 1
+        publicAccessControl:
+          setLabel: true
+          fundExternalClosedIssue: false
+  - uses:
+    - plugin: ubiquibot/conversation-rewards@main
+      with:
+        evmNetworkId: 100
+        evmPrivateEncrypted: "V1-3jNFk_Xebd762bnaraEeq5n7GvLKgv3KyogINNXpTWtZC0sn2Ar30mElrIcoWs6VP5iTK_HC3fmWIES6DRqvGkPypVPo7srF7u17WnYK5nWmZ6la-HstPugKfMTW6imV30gaHvHcTYsyQ558taw"
+        incentives:
+          enabled: true
+          contentEvaluator:
+            enabled: true
+          userExtractor:
+            enabled: true
+            redeemTask: true
+          dataPurge:
+            enabled: true
+          formattingEvaluator:
+            enabled: true
+            multipliers:
+              - select: [ ISSUE_SPECIFICATION ]
+                formattingMultiplier: 3
+                symbols:
+                  "\\b\\w+\\b": 0.1
+                scores:
+                  br: 0
+                  code: 1
+                  p: 1
+                  em: 0
+                  img: 0
+                  strong: 0
+                  blockquote: 0
+                  h1: 1
+                  h2: 1
+                  h3: 1
+                  h4: 1
+                  h5: 1
+                  h6: 1
+                  a: 1
+                  li: 1
+                  td: 1
+                  hr: 0
+              - select: [ ISSUE_AUTHOR ]
+                formattingMultiplier: 1
+                symbols:
+                  "\\b\\w+\\b": 0.2
+              - select: [ ISSUE_ASSIGNEE ]
+                formattingMultiplier: 0
+                symbols:
+                  "\\b\\w+\\b": 0
+              - select: [ ISSUE_COLLABORATOR ]
+                formattingMultiplier: 1
+                symbols:
+                  "\\b\\w+\\b": 0.1
+              - select: [ ISSUE_CONTRIBUTOR ]
+                formattingMultiplier: 0.25
+                symbols:
+                  "\\b\\w+\\b": 0.1
+              - select: [ PULL_SPECIFICATION ]
+                formattingMultiplier: 0
+                symbols:
+                  "\\b\\w+\\b": 0
+              - select: [ PULL_AUTHOR ]
+                formattingMultiplier: 2
+                symbols:
+                  "\\b\\w+\\b": 0.2
+              - select: [ PULL_ASSIGNEE ]
+                formattingMultiplier: 1
+                symbols:
+                  "\\b\\w+\\b": 0.1
+              - select: [ PULL_COLLABORATOR ]
+                formattingMultiplier: 1
+                symbols:
+                  "\\b\\w+\\b": 0.1
+              - select: [ PULL_CONTRIBUTOR ]
+                formattingMultiplier: 0.25
+                symbols:
+                  "\\b\\w+\\b": 0.1
+          permitGeneration:
+            enabled: false
+          githubComment:
+            enabled: true
+            post: true
+            debug: false
+  - uses:
+    - plugin: ubiquibot/user-activity-watcher@main
+      with:
+        unassignUserThreshold: "5 minutes"
+        sendRemindersThreshold: "1 minutes"
+  - uses:
+    - plugin: ubiquibot/automated-merging@main
+      with:
+        approvalsRequired:
+          collaborator: 1
+        mergeTimeout:
+          collaborator: "3.5 days"
+  - uses:
+    - plugin: ubiquibot/test-automated-merging@main
+      with:
+        approvalsRequired:
+          collaborator: 1
+        mergeTimeout:
+          collaborator: "2 minutes"
+  - uses:
+    - plugin: https://ubiquibot-command-start-stop.ubiquity.workers.dev
+      with:
+        isEnabled: true
+        timers:
+          reviewDelayTolerance: 86000
+          taskStaleTimeoutDuration: 2580000
+        miscellaneous:
+          maxConcurrentTasks: 3
+          startRequiresWallet: true
