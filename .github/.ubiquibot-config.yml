@@ -29,7 +29,7 @@ plugins:
     - plugin: ubiquibot/conversation-rewards@fix/truncated-response
       with:
         evmNetworkId: 100
-        evmPrivateEncrypted: null
+        evmPrivateEncrypted: ""
         incentives:
           enabled: true
           contentEvaluator:
