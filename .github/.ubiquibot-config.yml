@@ -119,13 +119,6 @@ plugins:
         mergeTimeout:
           collaborator: "3.5 days"
   - uses:
-    - plugin: ubiquibot/automated-merging@main
-      with:
-        approvalsRequired:
-          collaborator: 1
-        mergeTimeout:
-          collaborator: "2 minutes"
-  - uses:
     - plugin: https://ubiquibot-command-start-stop.ubiquity.workers.dev
       with:
         isEnabled: true
