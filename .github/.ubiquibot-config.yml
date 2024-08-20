@@ -26,7 +26,7 @@ plugins:
           setLabel: true
           fundExternalClosedIssue: false
   - uses:
-    - plugin: ubiquibot/conversation-rewards@main
+    - plugin: ubiquibot/conversation-rewards@fix/truncated-response
       with:
         evmNetworkId: 100
         evmPrivateEncrypted: ""
