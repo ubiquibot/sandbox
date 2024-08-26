@@ -26,7 +26,7 @@ plugins:
           setLabel: true
           fundExternalClosedIssue: false
   - uses:
-    - plugin: ubiquibot/conversation-rewards@feat/graphql-pr-fetch
+    - plugin: ubiquibot/conversation-rewards@main
       with:
         evmNetworkId: 100
         evmPrivateEncrypted: ""
