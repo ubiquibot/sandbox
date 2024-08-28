@@ -126,12 +126,9 @@ plugins:
         mergeTimeout:
           collaborator: "3.5 days"
   - uses:
-    - plugin: https://ubiquibot-command-start-stop.ubiquity.workers.dev
+    - plugin: https://ubiquibot-command-start-stop-main.ubiquity.workers.dev
       with:
-        isEnabled: true
-        timers:
-          reviewDelayTolerance: 86000
-          taskStaleTimeoutDuration: 2580000
-        miscellaneous:
-          maxConcurrentTasks: 3
-          startRequiresWallet: true
+        reviewDelayTolerance: "3 Days"
+        taskStaleTimeoutDuration: "30 Days"
+        maxConcurrentTasks: 3
+        startRequiresWallet: true # default is true
