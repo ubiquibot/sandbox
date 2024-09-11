@@ -21,7 +21,7 @@ plugins:
             - "Priority: 3 (High)"
             - "Priority: 4 (Urgent)"
             - "Priority: 5 (Emergency)"
-        basePriceMultiplier: 1
+        basePriceMultiplier: 3
         publicAccessControl:
           setLabel: true
           fundExternalClosedIssue: false
