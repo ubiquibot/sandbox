@@ -1,12 +1,12 @@
 plugins:
   - uses:
-    - plugin: https://ubiquibot-command-wallet.ubiquity.workers.dev
+    - plugin: https://ubiquibot-command-wallet-development.ubiquity.workers.dev
   - uses:
-    - plugin: https://ubiquibot-command-query-user.ubiquity.workers.dev
+    - plugin: https://ubiquibot-command-query-user-development.ubiquity.workers.dev
       with:
         allowPublicQuery: true
   - uses:
-    - plugin: https://ubiquibot-assistive-pricing.ubiquity.workers.dev
+    - plugin: https://ubiquibot-assistive-pricing-development.ubiquity.workers.dev
       with:
         labels:
           time:
@@ -26,7 +26,7 @@ plugins:
           setLabel: true
           fundExternalClosedIssue: false
   - uses:
-    - plugin: ubiquibot/conversation-rewards@main
+    - plugin: ubiquibot/conversation-rewards@development
       with:
         evmNetworkId: 100
         evmPrivateEncrypted: ""
@@ -114,19 +114,19 @@ plugins:
             post: true
             debug: false
   - uses:
-    - plugin: ubiquibot/user-activity-watcher@main
+    - plugin: ubiquibot/user-activity-watcher@development
       with:
         unassignUserThreshold: "5 minutes"
         sendRemindersThreshold: "1 minutes"
   - uses:
-    - plugin: ubiquibot/automated-merging@main
+    - plugin: ubiquibot/automated-merging@development
       with:
         approvalsRequired:
           collaborator: 1
         mergeTimeout:
           collaborator: "3.5 days"
   - uses:
-    - plugin: https://ubiquibot-command-start-stop-main.ubiquity.workers.dev
+    - plugin: https://ubiquibot-command-start-stop-main-development.ubiquity.workers.dev
       with:
         reviewDelayTolerance: "3 Days"
         taskStaleTimeoutDuration: "30 Days"
