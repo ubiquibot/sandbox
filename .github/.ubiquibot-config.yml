@@ -116,7 +116,7 @@ plugins:
   - uses:
     - plugin: ubiquibot/user-activity-watcher@development
       with:
-        unassignUserThreshold: "5 minutes"
+        unassignUserThreshold: "2 minutes"
         sendRemindersThreshold: "1 minutes"
   - uses:
     - plugin: ubiquibot/automated-merging@development
