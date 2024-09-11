@@ -1,7 +1,5 @@
 plugins:
   - uses:
-    - plugin: https://ubiquity-os-comment-vector-embeddings.keyrxng7749.workers.dev
-  - uses:
     - plugin: https://ubiquibot-command-wallet-development.ubiquity.workers.dev
   - uses:
     - plugin: https://ubiquibot-command-query-user-development.ubiquity.workers.dev
@@ -121,6 +119,8 @@ plugins:
   - uses:
     - plugin: ubiquibot/user-activity-watcher@development
       with:
+        unassignUserThreshold: "2 minutes"
+        sendRemindersThreshold: "1 minutes"
         watch:
           optOut:
             - ubiquibot
