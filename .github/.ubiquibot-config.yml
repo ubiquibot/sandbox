@@ -126,7 +126,7 @@ plugins:
         mergeTimeout:
           collaborator: "3.5 days"
   - uses:
-    - plugin: https://ubiquibot-command-start-stop-main-development.ubiquity.workers.dev
+    - plugin: https://ubiquibot-command-start-stop-development.ubiquity.workers.dev
       with:
         reviewDelayTolerance: "3 Days"
         taskStaleTimeoutDuration: "30 Days"
