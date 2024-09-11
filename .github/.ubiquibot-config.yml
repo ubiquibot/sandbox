@@ -1,5 +1,7 @@
 plugins:
   - uses:
+    - plugin: https://ubiquity-os-comment-vector-embeddings.keyrxng7749.workers.dev
+  - uses:
     - plugin: https://ubiquibot-command-wallet-development.ubiquity.workers.dev
   - uses:
     - plugin: https://ubiquibot-command-query-user-development.ubiquity.workers.dev
@@ -15,6 +17,7 @@ plugins:
             - "Time: <4 Hours"
             - "Time: <1 Day"
             - "Time: <1 Week"
+            - "Time: <1 Month"
           priority:
             - "Priority: 1 (Normal)"
             - "Priority: 2 (Medium)"
@@ -27,6 +30,8 @@ plugins:
           fundExternalClosedIssue: false
   - uses:
     - plugin: ubiquibot/conversation-rewards@development
+      # we don't skip bot events so conversation rewards triggered by the bot also run
+      skipBotEvents: false
       with:
         evmNetworkId: 100
         evmPrivateEncrypted: ""
@@ -116,15 +121,25 @@ plugins:
   - uses:
     - plugin: ubiquibot/user-activity-watcher@development
       with:
-        unassignUserThreshold: "2 minutes"
-        sendRemindersThreshold: "1 minutes"
+        watch:
+          optOut:
+            - ubiquibot
+            - launch-party
+            - staging
+            - production
   - uses:
     - plugin: ubiquibot/automated-merging@development
       with:
         approvalsRequired:
           collaborator: 1
         mergeTimeout:
-          collaborator: "3.5 days"
+          collaborator: "5 minutes"
+        repos:
+          ignore:
+            - ubiquibot
+            - launch-party
+            - staging
+            - production
   - uses:
     - plugin: https://ubiquibot-command-start-stop-development.ubiquity.workers.dev
       with:
