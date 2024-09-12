@@ -133,8 +133,8 @@ plugins:
       with:
         approvalsRequired:
           collaborator: 1
-        mergeTimeout:
-          collaborator: "5 minutes"
+        # mergeTimeout:
+        #   collaborator: "5 minutes"
         repos:
           ignore:
             - ubiquibot
