@@ -136,6 +136,8 @@ plugins:
         # mergeTimeout:
         #   collaborator: "5 minutes"
         repos:
+          monitor:
+            - sandbox
           ignore:
             - ubiquibot
             - launch-party
